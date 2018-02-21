@@ -8,7 +8,7 @@ na Disciplina Estrutura de Dados*/
 /*Bibliotecas criadas no programa (TADs)*/
 #include "Funcionario.h"
 #include "ListaFuncionario.h"
-//#include "ListaFuncionarioEstatica.h"
+#include "ListaFuncionarioEstatica.h"
 
 /*Função que imprime o menu principal do programa*/
 void imprime_menu(){
@@ -26,22 +26,22 @@ void imprime_menu(){
 
 int main(int argc, char *argv[]) {
 	
-	/* int opcao = 0;
+	int opcao = 0;
 	printf("Para Lista Estática digite 1 ");
 	printf("Para Lista Dinâmica aperte Enter ");
 	printf("Você deseja uma Lista Dinâmica ou Estática? ");
 	scanf(opcao);
 
-	if (opcao == 0) { */
+	if (opcao == 0) {
 		ListaFuncionario* list = lista_cria();
-	/*}
+	}
 	else {
 		int tamanho = 10;
 		printf("Para o tamanho padrão (10) aperte enter");
 		printf("Digite o tamanho da lista: ");
 		scanf(tamanho);
 		ListaFuncionarioEstatica * list = lista_cria(tamanho);
-	} */
+	}
 
 	do{
 		
