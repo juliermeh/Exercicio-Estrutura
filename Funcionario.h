@@ -1,7 +1,19 @@
 /* Tipo: Funcionário */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/* Tipo: Funcionário */
+struct funcionario {
+	char *nome;
+	int idade;
+	int matricula;
+};
+//typedef struct funcionario Funcionario; //Redeclarado no Funcionario.c
+
 /*Tipo criado para armazenar informações de Funcionários de uma empresa.
- O Campo Matrícula deve ser usado como Chave para a identificação única 
+ O Campo Matrícula deve ser usado como Chave para a identificação única
  de um Funcionário no conjunto*/
 typedef struct funcionario Funcionario;
 

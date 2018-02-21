@@ -1,4 +1,4 @@
-/*Programa Cliente para testar os TADs criados 
+/*Programa Cliente para testar os TADs criados
 na Disciplina Estrutura de Dados*/
 
 /*Bibliotecas da Linguagem utilizadas pelo cliente*/
@@ -8,13 +8,15 @@ na Disciplina Estrutura de Dados*/
 /*Bibliotecas criadas no programa (TADs)*/
 #include "Funcionario.h"
 #include "ListaFuncionario.h"
-#include "ListaFuncionarioEstatica.h"
+#include "acoes.h"
+//#include "ListaFuncionarioEstatica.h"
 
 /*Função que imprime o menu principal do programa*/
 void imprime_menu(){
 
   printf("\n--------------- M E N U ---------------\n");
   printf("---------------------------------------\n\n");
+  printf("     0 - Sair\n");
   printf("     1 - Adiciona Funcionario\n");
   printf("     2 - Remove Funcionario \n");
   printf("     3 - Busca Funcionario\n");
@@ -25,60 +27,50 @@ void imprime_menu(){
 
 
 int main(int argc, char *argv[]) {
-	
-	int opcao = 0;
-	printf("Para Lista Estática digite 1 ");
-	printf("Para Lista Dinâmica aperte Enter ");
-	printf("Você deseja uma Lista Dinâmica ou Estática? ");
-	scanf(opcao);
 
-	if (opcao == 0) {
-		ListaFuncionario* list = lista_cria();
-	}
-	else {
-		int tamanho = 10;
-		printf("Para o tamanho padrão (10) aperte enter");
-		printf("Digite o tamanho da lista: ");
-		scanf(tamanho);
-		ListaFuncionarioEstatica * list = lista_cria(tamanho);
-	}
+	ListaFuncionario* list = lista_cria();
 
 	do{
-		
+
 		int valor=0;
 		imprime_menu(); // mostra o menu sempre depois de uma ação
 		scanf ("%d",&valor);
-			
+
 		switch ( valor ) {
-			
+            case 0:
+            printf("Programa encerrado.\n");
+            pause();//system("pause"); //espera teclar
+            cls();//system("cls"); //limpa a tela
+            return 0;
+
 		     case 1 :   //Adiciona um Funcionario
 		       {
 		       	Funcionario* f = cria_Funcionario();
 			       	if(f!=NULL){
-					   
+
 					    imprime_Func(f);
-				       	system("pause"); //espera teclar
-				       	system("cls"); //limpa a tela
+				       	pause();//system("pause"); //espera teclar
+				       	cls();//system("cls"); //limpa a tela
 				       	list = lista_insere_inicio(list,f);
 			       	    printf("Funcionario adicionado com Sucesso!!\n");
-			       	    system("pause"); //espera teclar
-				       	system("cls"); //limpa a tela
-				       	
+			       	    pause();//system("pause"); //espera teclar
+				       	cls();//system("cls"); //limpa a tela
+
 			       }else printf("Memoria insuficiente!!\n");
 			   }
 		     break;
-		 
+
 		     case 2 :    //Remove Funcionário
 		       {
 		       	int mat=0;
 		        printf("Digite a matricula do Funcionario\n");
 				scanf ("%d",&mat);
 				list = lista_remove(list, mat);
-				system("pause"); //espera teclar
-				system("cls"); //limpa a tela
+				pause();//system("pause"); //espera teclar
+                cls();//system("cls"); //limpa a tela
 			   }
 		     break;
-		 
+
 		     case 3 :   //Busca Funcionario
 		        {
 		        int mat=0;
@@ -86,17 +78,17 @@ int main(int argc, char *argv[]) {
 				scanf ("%d",&mat);
 				Funcionario* f_aux = busca(list,mat);
 				if(f_aux!=NULL){
-				
+
 					imprime_Func(f_aux);
-					system("pause");
-					system("cls");
-					 
+					pause();//system("pause"); //espera teclar
+                    cls();//system("cls"); //limpa a tela
+
 		    	}
 				else {
 						printf("Nao foi possivel retornar Funcionario\n");
-						system("pause");
-						system("cls");	
-						 	
+						pause();//system("pause"); //espera teclar
+				       	cls();//system("cls"); //limpa a tela
+
 					}
 		         break;
 	     	   }
@@ -106,29 +98,29 @@ int main(int argc, char *argv[]) {
                 printf("==========================================\n\n");
 		      	lista_imprime(list);
 		      	printf("==========================================\n\n");
-		      	system("pause"); //espera teclar
-			    system("cls"); //limpa a tela
+		      	pause();//system("pause"); //espera teclar
+                cls();//system("cls"); //limpa a tela
 			  }
 		     break;
 		     case 5 :  //Deleta a Lista
 		      {
 		      	/*List receberá NULL após liberação do espaço de memória
 				  para o programa manter uma referencia da Lista*/
-		      	list = lista_libera(list); 
+		      	list = lista_libera(list);
 			  }
-	
-		     break;	 
-		     	 
+
+		     break;
+
 		     default :
 		     	{
 				   printf ("Valor invalido!\n\n");
-				   system("pause");
-				   system("cls");
+				   pause();//system("pause"); //espera teclar
+                   cls();//system("cls"); //limpa a tela
 		     	}
         }
-		
+
 	}while(1); //Loop infinito
-       
+
  }
- 
- 
+
+
