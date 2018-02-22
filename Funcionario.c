@@ -17,10 +17,13 @@ Funcionario* cria_Funcionario(void){
 
 	printf("Digite o nome do Funcionario: \t\t");
 	//gets(nome);
+	setbuf(stdin,NULL);
 	scanf ("%s",nome);
 	printf("\nDigite a matricula do Funcionario:  \t");
+	setbuf(stdin,NULL);
 	scanf ("%d",&mat);
 	printf("\nDigite a idade do Funcionario: \t\t");
+	setbuf(stdin,NULL);
 	scanf ("%d",&idade);
 
 	atualiza_nome_Func(novo, nome);

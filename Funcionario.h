@@ -10,6 +10,7 @@ struct funcionario {
 	int idade;
 	int matricula;
 };
+
 //typedef struct funcionario Funcionario; //Redeclarado no Funcionario.c
 
 /*Tipo criado para armazenar informações de Funcionários de uma empresa.

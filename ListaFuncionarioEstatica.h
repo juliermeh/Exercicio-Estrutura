@@ -1,7 +1,7 @@
 /* TAD: Lista */
 
 /* Tipo exportado */
-typedef struct lista ListaFuncionarioEstatica;
+typedef Funcionario* ListaFuncionarioEstatica ;
 
 /***********************************************************/
 /******************* Funções exportadas *******************/

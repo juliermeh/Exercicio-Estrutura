@@ -28,6 +28,8 @@ void imprime_menu(){
 
 int main(int argc, char *argv[]) {
 
+
+
 	ListaFuncionario* list = lista_cria();
 
 	do{
@@ -51,7 +53,7 @@ int main(int argc, char *argv[]) {
 					    imprime_Func(f);
 				       	pause();//system("pause"); //espera teclar
 				       	cls();//system("cls"); //limpa a tela
-				       	list = lista_insere_inicio(list,f);
+				       	list = lista_insere_ordenado(list,f);
 			       	    printf("Funcionario adicionado com Sucesso!!\n");
 			       	    pause();//system("pause"); //espera teclar
 				       	cls();//system("cls"); //limpa a tela

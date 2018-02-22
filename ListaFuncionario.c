@@ -6,7 +6,7 @@
 
 
 struct lista {
-	Funcionario* no; 
+	Funcionario* no;
 	struct lista* prox;
 };
 typedef struct lista ListaFuncionario;
@@ -20,16 +20,16 @@ return NULL;
 
 /* Função insere no inicio - Insere um Novo Funcionário no inicio da Lista */
 ListaFuncionario* lista_insere_inicio (ListaFuncionario* list, Funcionario* func){
-	
+
 	ListaFuncionario* novo = (ListaFuncionario*) malloc(sizeof(ListaFuncionario));
 	if(novo!=NULL){
-	
+
 	 novo->no = func;
 	 novo->prox = list;
-	 	
+
  	 return novo;
    }else printf("Não foi possivel alocar espaco de memoria para o novo no");
-	
+
 	return NULL;
 }
 
@@ -38,14 +38,44 @@ int lista_vazia (ListaFuncionario* list){
 	return (list == NULL);
 
 }
+/*Funcao para inserir ordenado*/
+ListaFuncionario* lista_insere_ordenado(ListaFuncionario* list, Funcionario* func){
+    ListaFuncionario* novo=(ListaFuncionario*)malloc(sizeof(ListaFuncionario));
+    if (novo==NULL)
+    {
+        printf("Nao foi possivel alocar espaco de memoria para o novo no");
+        free(func);
+        return list;
+    }
+    novo->no=func;
+    novo->prox=NULL;
+    if (list==NULL) return novo;//Lista vazia
+    ListaFuncionario* p=list;
+    ListaFuncionario* a=NULL;
+    while(p!=NULL)
+    {
+        if (func->matricula<p->no->matricula)
+            break;
+        a=p;
+        p=p->prox;
+    }
+    if(a==NULL)//Inserido no inicio
+        {
+            novo->prox=list;
+            return novo;
+        }
+    novo->prox=a->prox;
+    a->prox=novo;
+    return list;//Inserido no meio da lista
+}
 
 /* Função busca- busca um Funcionario na lista */
 Funcionario* busca(ListaFuncionario* lst, int v){
-	
+
 	ListaFuncionario* p;
 	for (p=lst; p!=NULL; p = p->prox) {
 		if (acessa_mat_Func(p->no) == v)  //compara as matrículas
-			return p->no;	
+			return p->no;
     }
      printf("Valor nao encontrado na lista!\n");
     return NULL; /* não achou o elemento */
@@ -53,7 +83,7 @@ Funcionario* busca(ListaFuncionario* lst, int v){
 
 /* Função Remove - Remove um Funcionário da Lista */
 ListaFuncionario* lista_remove(ListaFuncionario* list, int val){
-	
+
 ListaFuncionario* a = NULL; /* ponteiro para elemento anterior */
 ListaFuncionario* p = list; /* ponteiro para percorrer a lista */
 
@@ -64,10 +94,10 @@ while (p != NULL && acessa_mat_Func(p->no) != val) {
 }
 /* verifica se achou elemento */
 if (p == NULL){
-   
+
    printf("\nValor nao encontrado na lista!\n");
    return list; /* não achou: retorna lista original */
-   
+
 }
 /* retira elemento */
 if (a == NULL)
@@ -82,23 +112,23 @@ else { /* retira elemento do meio da lista */
 }
    free(p);
    return list;
-   
+
 }
 
 /* Função Imprime - Imprime uma Lista de Funcionários*/
 void lista_imprime (ListaFuncionario* list){
-	
+
 	if(list!=NULL){
 
 	ListaFuncionario* p;
 	for (p = list; p != NULL; p = p->prox)
 	       imprime_Func(p->no);
-	       
+
 	}else printf("A lista está vazia!\n");
 }
 
 ListaFuncionario* lista_libera (ListaFuncionario* list){
-	
+
 	ListaFuncionario* p = list;
   while (p != NULL) {
      ListaFuncionario* t = p->prox;   /* guarda referência p/ próx. elemento */
