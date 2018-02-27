@@ -13,7 +13,7 @@ ListaFuncionarioEstatica* lista_cria_Estatica (int tamanho);
 void lista_insere_inicio_Estatica (ListaFuncionarioEstatica* list, Funcionario* func);
 
 /* Função insere ordenado - Insere um Novo Funcionário ordenado dentro da Lista */
-void lista_insere_ordenado_Estatica (ListaFuncionarioEstatica* list, Funcionario* func)
+void lista_insere_ordenado_Estatica (ListaFuncionarioEstatica* list, Funcionario* func);
 
 /* Função busca- busca um Funcionario na lista */
 Funcionario* busca_Estatica(ListaFuncionarioEstatica* lst, int v);
@@ -22,7 +22,7 @@ Funcionario* busca_Estatica(ListaFuncionarioEstatica* lst, int v);
 int e_Lista_Vazia(ListaFuncionarioEstatica* list);
 
 /* Função Lista Cheia - Testa de a Lista está cheia  */
-int e_Lista_Cheia(ListaFuncionarioEstatica* list)
+int e_Lista_Cheia(ListaFuncionarioEstatica* list);
 
 /* Função Remove - Remove um Funcionário da Lista */
 void lista_remove_Estatica(ListaFuncionarioEstatica* list, int val);

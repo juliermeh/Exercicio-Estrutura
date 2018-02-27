@@ -1,23 +1,20 @@
 # Project: Empresa
 # Makefile created by Dev-C++ 5.11
 
-# This Makefile is written for syntax check!
-# Regenerate it if you want to use this Makefile to build.
-
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = ../Documents/GitHub/Exercicio-Estrutura/Cliente.o ../Documents/GitHub/Exercicio-Estrutura/Funcionario.o ../Documents/GitHub/Exercicio-Estrutura/ListaFuncionario.o ../Documents/GitHub/Exercicio-Estrutura/ListaFuncionarioEstatica.o
-LINKOBJ  = ../Documents/GitHub/Exercicio-Estrutura/Cliente.o ../Documents/GitHub/Exercicio-Estrutura/Funcionario.o ../Documents/GitHub/Exercicio-Estrutura/ListaFuncionario.o ../Documents/GitHub/Exercicio-Estrutura/ListaFuncionarioEstatica.o
+OBJ      = Cliente.o Funcionario.o ListaFuncionario.o ListaFuncionarioEstatica.o
+LINKOBJ  = Cliente.o Funcionario.o ListaFuncionario.o ListaFuncionarioEstatica.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
 BIN      = Empresa.exe
-CXXFLAGS = $(CXXINCS) -fsyntax-only
-CFLAGS   = $(INCS) -fsyntax-only
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
 RM       = rm.exe -f
 
-.PHONY: all all-before all-after clean clean-custom $(OBJ) $(BIN)
+.PHONY: all all-before all-after clean clean-custom
 
 all: all-before $(BIN) all-after
 
@@ -25,15 +22,16 @@ clean: clean-custom
 	${RM} $(OBJ) $(BIN)
 
 $(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-../Documents/GitHub/Exercicio-Estrutura/Cliente.o: ../Documents/GitHub/Exercicio-Estrutura/Cliente.c
-	$(CC) -c ../Documents/GitHub/Exercicio-Estrutura/Cliente.c $(CFLAGS)
+Cliente.o: Cliente.c
+	$(CC) -c Cliente.c -o Cliente.o $(CFLAGS)
 
-../Documents/GitHub/Exercicio-Estrutura/Funcionario.o: ../Documents/GitHub/Exercicio-Estrutura/Funcionario.c
-	$(CC) -c ../Documents/GitHub/Exercicio-Estrutura/Funcionario.c $(CFLAGS)
+Funcionario.o: Funcionario.c
+	$(CC) -c Funcionario.c -o Funcionario.o $(CFLAGS)
 
-../Documents/GitHub/Exercicio-Estrutura/ListaFuncionario.o: ../Documents/GitHub/Exercicio-Estrutura/ListaFuncionario.c
-	$(CC) -c ../Documents/GitHub/Exercicio-Estrutura/ListaFuncionario.c $(CFLAGS)
+ListaFuncionario.o: ListaFuncionario.c
+	$(CC) -c ListaFuncionario.c -o ListaFuncionario.o $(CFLAGS)
 
-../Documents/GitHub/Exercicio-Estrutura/ListaFuncionarioEstatica.o: ../Documents/GitHub/Exercicio-Estrutura/ListaFuncionarioEstatica.c
-	$(CC) -c ../Documents/GitHub/Exercicio-Estrutura/ListaFuncionarioEstatica.c $(CFLAGS)
+ListaFuncionarioEstatica.o: ListaFuncionarioEstatica.c
+	$(CC) -c ListaFuncionarioEstatica.c -o ListaFuncionarioEstatica.o $(CFLAGS)

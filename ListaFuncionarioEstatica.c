@@ -50,7 +50,7 @@ void lista_insere_inicio_Estatica (ListaFuncionarioEstatica* list, Funcionario* 
 /*Funcao para inserir ordenado*/
 void lista_insere_ordenado_Estatica (ListaFuncionarioEstatica* list, Funcionario* func){
     int k=0;
-    while((k<TAM_LISTA)&&(func->matricula<list[k]->matricula)){
+    while((k<TAM_LISTA)&&(func->matricula<list->matricula)){
         k++;
     }
     lista_insere_posicao_Estatica(list,func,k);

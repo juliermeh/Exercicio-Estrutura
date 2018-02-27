@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
 					system("pause"); //espera teclar
 					system("cls"); //limpa a tela
 					//list = lista_insere_inicio_Estatica(list, f);
-					list = lista_insere_ordenado_Estatica(list, f);
+					lista_insere_ordenado_Estatica(list, f);
 					printf("Funcionario adicionado com Sucesso!!\n");
 					system("pause"); //espera teclar
 					system("cls"); //limpa a tela
@@ -162,7 +162,7 @@ int main(int argc, char *argv[]) {
 				int mat = 0;
 				printf("Digite a matricula do Funcionario\n");
 				scanf("%d", &mat);
-				list = lista_remove_Estatica(list, mat);
+				lista_remove_Estatica(list, mat);
 				system("pause"); //espera teclar
 				system("cls"); //limpa a tela
 			}
@@ -203,7 +203,7 @@ int main(int argc, char *argv[]) {
 			{
 				/*List receberá NULL após liberação do espaço de memória
 				para o programa manter uma referencia da Lista*/
-				list = lista_libera_Estatica(list);
+				lista_libera_Estatica(list);
 			}
 
 			break;
