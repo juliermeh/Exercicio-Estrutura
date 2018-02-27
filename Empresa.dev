@@ -50,18 +50,8 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
-[Unit1]
-FileName=..\Documents\GitHub\Exercicio-Estrutura\Cliente.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit2]
-FileName=..\Documents\GitHub\Exercicio-Estrutura\Funcionario.c
+FileName=Funcionario.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -71,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=..\Documents\GitHub\Exercicio-Estrutura\Funcionario.h
+FileName=Funcionario.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -81,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=..\Documents\GitHub\Exercicio-Estrutura\ListaFuncionario.c
+FileName=ListaFuncionario.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -91,7 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=..\Documents\GitHub\Exercicio-Estrutura\ListaFuncionario.h
+FileName=ListaFuncionario.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -101,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=..\Documents\GitHub\Exercicio-Estrutura\ListaFuncionarioEstatica.c
+FileName=ListaFuncionarioEstatica.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -111,7 +101,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=..\Documents\GitHub\Exercicio-Estrutura\ListaFuncionarioEstatica.h
+FileName=ListaFuncionarioEstatica.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit1]
+FileName=Cliente.c
 CompileCpp=0
 Folder=
 Compile=1

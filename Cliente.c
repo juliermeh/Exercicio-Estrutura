@@ -146,7 +146,8 @@ int main(int argc, char *argv[]) {
 					imprime_Func(f);
 					system("pause"); //espera teclar
 					system("cls"); //limpa a tela
-					list = lista_insere_inicio_Estatica(list, f);
+					//list = lista_insere_inicio_Estatica(list, f);
+					list = lista_insere_ordenado_Estatica(list, f);
 					printf("Funcionario adicionado com Sucesso!!\n");
 					system("pause"); //espera teclar
 					system("cls"); //limpa a tela
