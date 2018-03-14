@@ -10,6 +10,8 @@ void cls(void);
 /*Pausa a tela*/
 void pause(void);
 
+/*Função que imprime o menu principal do programa*/
+void imprime_menu(char *titulo);
 
 
 #endif // ACOES_H_INCLUDED

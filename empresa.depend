@@ -1,12 +1,9 @@
 # depslib dependency file v1.0
-1519299147 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/Cliente.c
-	<stdio.h>
-	<stdlib.h>
-	"Funcionario.h"
-	"ListaFuncionario.h"
+1521054293 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/Cliente.c
+	"Cliente.h"
 	"acoes.h"
 
-1519228891 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/Funcionario.h
+1521056760 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/Funcionario.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -22,18 +19,47 @@
 	"Funcionario.h"
 	"ListaFuncionario.h"
 
-1519305990 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/ListaFuncionarioEstatica.c
+1521065273 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/ListaFuncionarioEstatica.c
+	"ListaFuncionarioEstatica.h"
+
+1521063578 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/ListaFuncionarioEstatica.h
 	<stdio.h>
 	<stdlib.h>
 	"Funcionario.h"
-	"ListaFuncionarioEstatica.h"
 
-1519300300 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/ListaFuncionarioEstatica.h
-
-1519149050 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/acoes.c
+1521054335 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/acoes.c
 	"acoes.h"
 
-1519149122 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/acoes.h
+1521054228 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/acoes.h
 	<stdio.h>
 	<stdlib.h>
+
+1521065036 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/ClienteEstatica.c
+	"ClienteEstatica.h"
+
+1521053488 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/Cliente.h
+	<stdio.h>
+	<stdlib.h>
+	"Funcionario.h"
+	"ListaFuncionario.h"
+	"acoes.h"
+
+1521055303 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/main.c
+	<stdio.h>
+	<stdlib.h>
+	"acoes.h"
+	"Cliente.h"
+
+1521056528 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/ClienteEstatica.h
+	<stdio.h>
+	"Funcionario.h"
+	"ListaFuncionarioEstatica.h"
+
+1521054948 /home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/FuncionarioEstatica.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1521054904 source:/home/isleimar/Documentos/ADS/02 - Periodo - 2017.2/Estrutura de Dados/projetos/Exercicio-Estrutura/FuncionarioEstatica.c
+	"FuncionarioEstatica.h"
 

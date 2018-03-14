@@ -1,3 +1,6 @@
+#ifndef FUNCIONARIO_H_INCLUDED
+#define FUNCIONARIO_H_INCLUDED
+
 /* Tipo: Funcionário */
 
 #include <stdio.h>
@@ -55,3 +58,5 @@ void imprime_Func(Funcionario* func);
 /* Preenche Funcionario - recebe os dados do usuário e preenche um Funcionario
   Retorno: int*/
 int preenche_Func(Funcionario* func);
+
+#endif // FUNCIONARIO_H_INCLUDED

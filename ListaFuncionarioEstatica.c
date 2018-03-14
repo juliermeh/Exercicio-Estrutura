@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#include  "Funcionario.h"  //Usa o Tipo Funcionario
 #include "ListaFuncionarioEstatica.h"
 
 int TAM_LISTA=0;
@@ -18,87 +14,107 @@ ListaFuncionarioEstatica* lista_cria_Estatica (int tamanho){
     return novaLista;
 }
 
+/*Verifica se a lista esta vazia*/
 int e_Lista_Vazia(ListaFuncionarioEstatica* list){
     return (list[0]==NULL);
 }
 
+/*Verifica se a lista esta cheia*/
 int e_Lista_Cheia(ListaFuncionarioEstatica* list){
     return (list[TAM_LISTA-1]!=NULL);
 }
-/* Função insere no inicio - Insere um Novo Funcionário no inicio da Lista */
-void lista_insere_posicao_Estatica (ListaFuncionarioEstatica* list, Funcionario* func, int posi){
-    if ((posi<0)||(posi>=TAM_LISTA)){
-        printf("Posição invalida.");
-        return;
-    }
+/* Função insere na posicao especifica*/
+int lista_insere_posicao_Estatica (ListaFuncionarioEstatica* list, Funcionario* func, int posi){
     if(e_Lista_Cheia(list)){
-        printf("A lista esta cheia.");
-        return;
+        printf("A lista esta cheia.\n");
+        return 0;
+    }
+    if ((posi<0)||(posi>=TAM_LISTA)){
+        printf("Posicao invalida.\n");
+        return 0;
     }
     int k;
-    for (k=TAM_LISTA-1;k>posi;k++)
+    for (k=TAM_LISTA-1;k>posi;k--)
         list[k]=list[k-1];
     list[posi]=func;
+    return 1;
 }
 
 
 /* Função insere no inicio - Insere um Novo Funcionário no inicio da Lista */
-void lista_insere_inicio_Estatica (ListaFuncionarioEstatica* list, Funcionario* func){
-    lista_insere_posicao_Estatica(list,func,0);
+int lista_insere_inicio_Estatica (ListaFuncionarioEstatica* list, Funcionario* func){
+   return lista_insere_posicao_Estatica(list,func,0);
 }
 
-/*Funcao para inserir ordenado*/
-void lista_insere_ordenado_Estatica (ListaFuncionarioEstatica* list, Funcionario* func){
+/*Funcao para inserir ordenado pela matricula*/
+int lista_insere_ordenado_Estatica (ListaFuncionarioEstatica* list, Funcionario* func){
     int k=0;
-    while((k<TAM_LISTA)&&(func->matricula<list[k]->matricula)){
+    while((k<TAM_LISTA)&&(list[k]!=NULL)){
+        if (func->matricula<list[k]->matricula)
+            break;
         k++;
     }
-    lista_insere_posicao_Estatica(list,func,k);
+    return lista_insere_posicao_Estatica(list,func,k);
 }
 
 /* Função busca- busca um Funcionario na lista */
 Funcionario* busca_Estatica(ListaFuncionarioEstatica* lst, int v){
-    return lst[v];
+    int k=0;
+    while(lst[k]!=NULL){
+        if (lst[k]->matricula==v) break;
+        k++;
+    }
+    return lst[k];
+}
+
+int lista_Remover_Posicao(ListaFuncionarioEstatica* list, int pos){
+     if ((pos<0)||(pos>=TAM_LISTA)||(list[pos]==NULL)){
+        printf("Elemento nao localizado.\n");
+        return 0;
+    }
+    free(list[pos]);
+    int q;
+    for(q=pos;q<TAM_LISTA-1;q++){
+        list[q]=list[q+1];
+    }
+    list[TAM_LISTA-1]=NULL;
+    return 1;
 }
 
 
 /* Função Remove - Remove um Funcionário da Lista */
-void lista_remove_Estatica(ListaFuncionarioEstatica* list, int val){
+int lista_remove_Estatica(ListaFuncionarioEstatica* list, int val){
      if (e_Lista_Vazia(list)){
-        printf("Lista vazia.");
-        return;
+        printf("Lista vazia.\n");
+        return 0;
     }
     int k=0;
-    while((k<TAM_LISTA)&&(list[k]->matricula!=val))k++;
-    if (k>=TAM_LISTA){
-        printf("Elemento nao localizado");
-        return;
+    while((k<TAM_LISTA)&&(list[k]!=NULL)){
+        if (list[k]->matricula==val){
+            return lista_Remover_Posicao(list,k);
+        }
+        k++;
     }
-    free(list[val]);
-    int q;
-    for(q=k;q<TAM_LISTA;q++){
-        list[q]=list[q+1];
-    }
-    list[TAM_LISTA-1]=NULL;
+    return 0;
 }
 
 /* Função Imprime - Imprime uma Lista de Funcionários*/
 void lista_imprime_Estatica (ListaFuncionarioEstatica* list){
     if (e_Lista_Vazia(list)){
-        printf("A lista está vazia!\n");
+        printf("A lista esta vazia!\n");
         return;
     }
     int k=0;
     while((k<TAM_LISTA)&&(list[k]!=NULL)){
-        imprime_Func(list[k]->matricula);
+        imprime_Func(list[k]);
+        k++;
     }
 
 }
 
+/*Esvazia a lista*/
 void lista_libera_Estatica (ListaFuncionarioEstatica* list){
-    int k=0;
-    while((k<TAM_LISTA)&&(list[k]!=NULL)){
-        lista_remove_Estatica(list,k);
-        k++;
+    while(!e_Lista_Vazia(list)){
+        lista_Remover_Posicao(list,0);
     }
 }

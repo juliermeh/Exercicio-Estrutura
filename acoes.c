@@ -29,5 +29,20 @@ void pause(void)
     #else
    	//outro sistema
     #endif
+}
 
+
+void imprime_menu(char *titulo)
+{
+
+  printf("\n--------------- M E N U ---------------\n");
+  printf("\n             LISTA %s\n",titulo);
+  printf("---------------------------------------\n\n");
+  printf("     0 - Sair\n");
+  printf("     1 - Adiciona Funcionario\n");
+  printf("     2 - Remove Funcionario \n");
+  printf("     3 - Busca Funcionario\n");
+  printf("     4 - Imprime Lista de Funcionarios\n");
+  printf("     5 - Deleta Lista\n");
+  printf("---------------------------------------\n\n");
 }

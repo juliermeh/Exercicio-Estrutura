@@ -1,49 +1,20 @@
 /*Programa Cliente para testar os TADs criados
 na Disciplina Estrutura de Dados*/
 
-/*Bibliotecas da Linguagem utilizadas pelo cliente*/
-#include <stdio.h>
-#include <stdlib.h>
-
-/*Bibliotecas criadas no programa (TADs)*/
-#include "Funcionario.h"
-#include "ListaFuncionario.h"
+#include "Cliente.h"
 #include "acoes.h"
-//#include "ListaFuncionarioEstatica.h"
 
-/*Função que imprime o menu principal do programa*/
-void imprime_menu(){
-
-  printf("\n--------------- M E N U ---------------\n");
-  printf("---------------------------------------\n\n");
-  printf("     0 - Sair\n");
-  printf("     1 - Adiciona Funcionario\n");
-  printf("     2 - Remove Funcionario \n");
-  printf("     3 - Busca Funcionario\n");
-  printf("     4 - Imprime Lista de Funcionarios\n");
-  printf("     5 - Deleta Lista\n");
-  printf("---------------------------------------\n\n");
-}
-
-
-int main(int argc, char *argv[]) {
-
-
-
-	ListaFuncionario* list = lista_cria();
-
+int principal() {
+    ListaFuncionario* list = lista_cria();
 	do{
 
 		int valor=0;
-		imprime_menu(); // mostra o menu sempre depois de uma ação
+		imprime_menu("DINAMICA"); // mostra o menu sempre depois de uma ação
 		scanf ("%d",&valor);
 
 		switch ( valor ) {
             case 0:
-            printf("Programa encerrado.\n");
-            pause();//system("pause"); //espera teclar
-            cls();//system("cls"); //limpa a tela
-            return 0;
+                return 0;
 
 		     case 1 :   //Adiciona um Funcionario
 		       {
