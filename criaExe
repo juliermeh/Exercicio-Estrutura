@@ -1,0 +1,18 @@
+#!/bin/bash
+wine gcc -c acoes.c 
+wine gcc -c Cliente.c 
+wine gcc -c ClienteEstatica.c 
+wine gcc -c Funcionario.c
+wine gcc -c ListaFuncionario.c
+wine gcc -c ListaFuncionarioEstatica.c
+wine gcc -c main.c
+wine gcc -o empresa main.o acoes.o Cliente.o ClienteEstatica.o Funcionario.o ListaFuncionario.o ListaFuncionarioEstatica.o
+rm main.o 
+rm acoes.o 
+rm Cliente.o 
+rm ClienteEstatica.o 
+rm Funcionario.o 
+rm ListaFuncionario.o 
+rm ListaFuncionarioEstatica.o
+wine empresa.exe
+

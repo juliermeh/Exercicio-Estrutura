@@ -1,51 +1,7 @@
 /*Programa Cliente para testar os TADs criados
 na Disciplina Estrutura de Dados*/
 
-<<<<<<< HEAD
-/*Bibliotecas da Linguagem utilizadas pelo cliente*/
-#include <stdio.h>
-#include <stdlib.h>
-
-/*Bibliotecas criadas no programa (TADs)*/
-#include "Funcionario.h"
-#include "ListaFuncionario.h"
-//#include "ListaFuncionarioEstatica.h"
-
-/*Função que imprime o menu principal do programa*/
-void imprime_menu(){
-
-  printf("\n--------------- M E N U ---------------\n");
-  printf("---------------------------------------\n\n");
-  printf("     1 - Adiciona Funcionario\n");
-  printf("     2 - Remove Funcionario \n");
-  printf("     3 - Busca Funcionario\n");
-  printf("     4 - Imprime Lista de Funcionarios\n");
-  printf("     5 - Deleta Lista\n");
-  printf("---------------------------------------\n\n");
-}
-
-
-int main(int argc, char *argv[]) {
-	
-	/* int opcao = 0;
-	printf("Para Lista Estática digite 1 ");
-	printf("Para Lista Dinâmica aperte Enter ");
-	printf("Você deseja uma Lista Dinâmica ou Estática? ");
-	scanf(opcao);
-
-	if (opcao == 0) { */
-		ListaFuncionario* list = lista_cria();
-	/*}
-	else {
-		int tamanho = 10;
-		printf("Para o tamanho padrão (10) aperte enter");
-		printf("Digite o tamanho da lista: ");
-		scanf(tamanho);
-		ListaFuncionarioEstatica * list = lista_cria(tamanho);
-	} */
-=======
 #include "Cliente.h"
->>>>>>> 40c3c91489d0cb0b0e1b4779abe0388daa061f59
 
 int principal() {
     ListaFuncionario* list = lista_cria();
